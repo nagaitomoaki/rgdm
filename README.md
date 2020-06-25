@@ -9,11 +9,16 @@ make application play automatically.
 * Android Studio 4.0.
 
 ## Set up environment with docker
-    sudo docker build -t rgdm
-    
-## Installation
+Clone repository or just copy Dockerfile and set up docker environment.
 
-
-    git clone https://github.com/nagaitomoaki/rmgd.git
+    git clone https://github.com/nagaitomoaki/rgdm.git
     cd rmgd
-    jupyter notebook restart.ipynb
+    sudo docker build -t rgdm .
+    sudo docker run --name="rgdm_dev" -t  -i -d -p 8888:8888 rgdm /bin/bash
+    sudo docker attach rgdm_dev  
+
+## Installation in docker container
+
+    git clone https://github.com/nagaitomoaki/rgdm.git
+    cd rgdm
+    jupyter notebook --ip 0.0.0.0 --no-browser --allow-root

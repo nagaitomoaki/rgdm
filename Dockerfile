@@ -1,13 +1,30 @@
-FROM continuumio/anaconda3:5.1.0
+# pull ubuntu 18.04 as base image
+FROM ubuntu:18.04
 
-RUN conda update -n base conda \
-  && conda create -n rgdm python=3.6 \
-  && . activate rgdm \
-  && conda install -c conda-forge opencv=4.1.0
+# update packages
+RUN set -x && \
+    apt update && \
+    apt upgrade -y
 
-VOLUME /data
+# install command
+RUN set -x && \
+    apt install -y wget && \
+    apt install -y sudo && \
+    apt install -y git
 
-EXPOSE 8888
+# anaconda
+RUN set -x && \
+    wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh && \
+    bash Anaconda3-2019.10-Linux-x86_64.sh -b && \
+    rm Anaconda3-2019.10-Linux-x86_64.sh
 
-CMD jupyter notebook --notebook-dir=/data/notebooks --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+# path setteing
+ENV PATH $PATH:/root/anaconda3/bin
 
+# python library
+WORKDIR /root
+ADD requirements.txt /root
+RUN pip install -r requirements.txt
+
+# move to root directory
+WORKDIR ../
