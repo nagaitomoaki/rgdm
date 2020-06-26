@@ -10,7 +10,8 @@ RUN set -x && \
 RUN set -x && \
     apt install -y wget && \
     apt install -y sudo && \
-    apt install -y git
+    apt install -y git && \
+    apt-get install -y libsm6 libxext6 libxrender-dev
 
 # anaconda
 RUN set -x && \
