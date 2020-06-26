@@ -7,9 +7,9 @@ make application play automatically.
 # Getting Started
 ## Prerequisites
 * [Android Studio 4.0](https://developer.android.com/studio/install).
-* Windows 10.
+* Windows 10
 ## Installation & Run source code
-You should set up environment kind of [anaconda](https://docs.anaconda.com/anaconda/install/linux/) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) in advance.
+You should set up environment kind of [anaconda](https://docs.anaconda.com/anaconda/install/linux/) or [miniconda](https://docs.conda.io/en/latest/miniconda.html) in advance
 
     git clone https://github.com/nagaitomoaki/rgdm.git
     cd rgdm
