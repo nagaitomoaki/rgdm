@@ -1,6 +1,6 @@
 # Restarting Game Duel Masters (RGDM)
 This is for those who want to
-make application play automatically with [pywinauto](https://pywinauto.readthedocs.io/en/latest/) library.
+make application play automatically.
 
 <img src="img/etc/title.png" alt="デュエルマスターズプレイス" title="デュエル">
 
@@ -9,7 +9,7 @@ make application play automatically with [pywinauto](https://pywinauto.readthedo
 * [LDPlayer 4.0](https://jp.ldplayer.net/) (Android-emulator)
 * Windows 10
 
-## Recommend Software for developing 
+## Recommend Software for developing
 * [MPPUtility](https://www.vector.co.jp/soft/winnt/util/se487144.html)
 * [winexp](https://forest.watch.impress.co.jp/docs/review/732245.html) or Spi++ (if you already installed Visual Studio)
 
